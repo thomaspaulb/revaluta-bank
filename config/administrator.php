@@ -42,7 +42,8 @@ return array(
 	 *
 	 * @type string
 	 */
-	'settings_config_path' => config_path('administrator/settings'),
+	//'settings_config_path' => config_path('administrator/settings'),
+	'settings_config_path' => config_path('administrator'),
 
 	/**
 	 * The menu structure of the site. For models, you should either supply the name of a model config file or an array of names of model config
@@ -113,7 +114,8 @@ return array(
 	 *
 	 * @type string
 	 */
-	'login_path' => 'auth/login',
+	//'login_path' => 'auth/login',
+	'login_path' => 'login',
 
 	/**
 	 * The logout path is the path where Administrator will send the user when they click the logout link

@@ -61,7 +61,7 @@
 
         $scope.Login = function() {
 
-            $http.post('/api/login', {
+            $http.post('api/login', {
               'email': $scope.email, 
               'password': $scope.password,
               'csrf_token': token

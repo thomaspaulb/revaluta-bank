@@ -60,7 +60,7 @@ class LoginController extends \Controller {
 
             return Response::json(array(
             'success' => true,
-            'redirect_url' => '/admin'
+            'redirect_url' => 'admin'
             ), 200);
 
              } else {        

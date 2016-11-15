@@ -124,7 +124,3 @@ Route::get('oma/{number}', function($number){
  ->with('omanoteprojectowner', $omanoteprojectowner)
  ->with('text', $text);
 });
-
-Route::get('about', function(){
- return View::make('about')->with('number_of_cats', 9000);
-});
