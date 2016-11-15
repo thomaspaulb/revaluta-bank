@@ -29,14 +29,6 @@
     <div class="swiper-button-prev swiper-button-white swiper-button-disabled"></div>
   </div>
 
-  <!-- <div class="swiper-container gallery-thumbs swiper-container-horizontal">
-    <div class="swiper-wrapper" style="transform: translate3d(480px, 0px, 0px); transition-duration: 0ms;">
-      <div class="swiper-slide swiper-slide-active" style="margin-right: 10px; background-image: url(2.png);"></div>
-      <div class="swiper-slide swiper-slide-next" style="margin-right: 10px; background-image: url(2.png);"></div>
-    <div class="swiper-slide" style="margin-right: 10px; background-image: url(2.png);"></div>
-    </div>
-  </div> -->
- 
   <script src="../js/jquery-1.11.3.min.js"></script>
   <script src="./index_files/swiper.min.js"></script>
    
@@ -46,15 +38,6 @@
         prevButton: '.swiper-button-prev',
         spaceBetween: 10,
     });
-    // var galleryThumbs = new Swiper('.gallery-thumbs', {
-    //     spaceBetween: 10,
-    //     centeredSlides: true,
-    //     slidesPerView: 5,
-    //     touchRatio: 0.2,
-    //     slideToClickedSlide: true
-    // });
-    // galleryTop.params.control = galleryThumbs;
-    // galleryThumbs.params.control = galleryTop;
 
     $(document).ready(function() {
       $('.swiper-container').on('click', '.myoverlay .mybutton', function() {
@@ -67,14 +50,26 @@
 
   <style>
     .swiper-container .myoverlay {
-      top: 10px;
-      right: 10px;
+      width: 50%;
+      right: 0px;
+      top: 0px;
       position: absolute;
       z-index: 1000;
+      margin-top: 10px;
+    }
+    /* Landscape phones and portrait tablets */
+    @media (max-width: 767px) {
+      .swiper-container .myoverlay {
+        width: 98% !important;
+      }
     }
     .swiper-container .myoverlay .mybutton {
       float: right;
-      margin-left: 10px;
+      width: 18%;
+      margin-right: 2%;
+    }
+    .swiper-container .myoverlay .mybutton img {
+      width: 100%;
     }
   </style>
 
