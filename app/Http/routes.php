@@ -17,7 +17,7 @@ use App\Models\Omanotehistoryitem;
 use App\Models\Omaproject;
 use App\Models\Walnotehistoryitem;
 
-Route::get('/', function() {
+Route::get('', function() {
     $text = DB::table('homepagetexts')->take(1)->get();
     return View::make('index')->with('text', $text);
 });
@@ -77,22 +77,21 @@ Route::get('oma', function(){
   $email = Input::get('email');
   return $uname;
 });*/
-Route::resource('/api/contact', 'ContactController');
-Route::resource('/api/wal', 'WalnoteController');
-//Route::resource('/api/oma', 'OmanoteController');
-Route::resource('/api/oma', 'OmaprojectController');
+Route::resource('api/contact', 'ContactController');
+Route::resource('api/wal', 'WalnoteController');
+Route::resource('api/oma', 'OmaprojectController');
 
 
 //****LOGIN ****//
-Route::resource('/api/login', 'LoginController');
-Route::get('/api/login', array('uses' => 'LoginController@showLogin'));
-Route::post('/api/login', array('uses' => 'LoginController@doLogin'));
+Route::resource('api/login', 'LoginController');
+Route::get('api/login', array('uses' => 'LoginController@showLogin'));
+Route::post('api/login', array('uses' => 'LoginController@doLogin'));
 Route::get('logout', array('uses' => 'LoginController@doLogout'));
 
 
-Route::post('/api/wal/{number}', 'HomeController@Go');
-Route::post('/api/{number}', array('uses' => 'HomeController@Go_to_page'));
-Route::post('/api/oma/{number}', array('uses' => 'HomeController@Go_oma'));
+Route::post('api/wal/{number}', 'HomeController@Go');
+Route::post('api/{number}', array('uses' => 'HomeController@Go_to_page'));
+Route::post('api/oma/{number}', array('uses' => 'HomeController@Go_oma'));
 
 
 Route::get('try2', function(){
@@ -126,75 +125,6 @@ Route::get('oma/{number}', function($number){
  ->with('text', $text);
 });
 
-Route::get('cats/{cat}', function(Cat $cat) {
- return View::make('cats.single')
- ->with('cat', $cat);
-});
-
-
-/*Route::get('cats/{id}', function($id){
- return "Cat #$id";
-})->where('id', '[0-9]+');
-/*Route::get('/', function(){
- return Redirect::to('cats');
-});*/
-
-Route::get('cats', function(){
- $cats = Cat::all();
- return View::make('catsindex')
- ->with('coolcats', $cats);
-});
-Route::get('cats/breeds/{name}', function($name){
- $breed = Breed::whereName($name)->with('cats')->first();
- return View::make('cats.index')
- ->with('breed', $breed)
- ->with('cats', $breed->cats);
-});
 Route::get('about', function(){
  return View::make('about')->with('number_of_cats', 9000);
-});
-///didplay a cat's page ///
-/*Route::get('cats/{id}', function($id) {
- $cat = Cat::find($id);
- return View::make('cats.single')
- ->with('cat', $cat);
-});*/
-
-Route::get('cats/{cat}', function(Cat $cat) {
- return View::make('cats.single')
- ->with('cat', $cat);
-});
-
-////Adding, editing, and deleting cats////
-Route::get('cats/create', function() {
- $cat = new Cat;
- return View::make('cats.edit')
- ->with('cat', $cat)
- ->with('method', 'post');
-});
-Route::get('cats/{cat}/edit', function(Cat $cat) {
- return View::make('cats.edit')
- ->with('cat', $cat)
- ->with('method', 'put');
-});
-Route::get('cats/{cat}/delete', function(Cat $cat) {
- return View::make('cats.edit')
- ->with('cat', $cat)
- ->with('method', 'delete');
-});
-
-Route::post('cats', function(){
- $cat = Cat::create(Input::all());
- return Redirect::to('cats/' . $cat->id)
- ->with('message', 'Successfully created page!');
-});
-Route::put('cats/{cat}', function(Cat $cat) {
- $cat->update(Input::all());
- return Redirect::to('cats/' . $cat->id)
- ->with('message', 'Successfully updated page!');
-});
-Route::delete('cats/{cat}', function(Cat $cat) {
- $cat->delete();
- return Redirect::to('cats')
- ->with('message', 'Successfully deleted page!');
 });
