@@ -15,8 +15,13 @@
 	},
 	"autoload": {
 		"classmap": [
+<<<<<<< HEAD
       		"app/Http/Controllers",
       		"app/Models"
+=======
+      "app/Http/Controllers",
+      "app/Models"
+>>>>>>> 4691f3184ed61f4f10e9c6e5a0bd4421d3cb0576
 		],
 		"psr-4": {
 			"App\\": "app/"

@@ -62,29 +62,29 @@
     <div class="navbar-fixed">
         <nav class="white">
             <div class="nav-wrapper container">
-                <a id="logo-container" href="/" class="brand-logo">
+                <a id="logo-container" href="{{ url('/') }}" class="brand-logo">
                   <img style="margin-top: 0.1em" height="50px" src="{{asset('images/revaluta-header-full.jpg')}}" alt="">
                 </a>
                 <ul id="dropdown1" class="dropdown-content" style="marging-top:100px;">
-                  <li><a href="/wal">One Worthalot</a></li>
-                  <li><a href="/zte">Zero Trillion Euro</a></li>
+                  <li><a href="wal">One Worthalot</a></li>
+                  <li><a href="zte">Zero Trillion Euro</a></li>
                  <!-- <li class="divider"></li> -->
-                  <li><a href="/oma">One Man Army</a></li>
+                  <li><a href="oma">One Man Army</a></li>
                 </ul>
                 <ul class="right hide-on-med-and-down">
                   <li><a class="dropdown-button" href="/" data-activates="dropdown1">Currency types<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
-                  <li><a href="/info" >Info</a></li>
-                  <li><a href="/shop">Get/Give Shop </a> </li>
+                  <li><a href="info" >Info</a></li>
+                  <li><a href="shop">Get/Give Shop </a> </li>
                   
-                  <li><a href="/contact">Contact</a></li>
+                  <li><a href="contact">Contact</a></li>
                  <!-- <li><a href="/admin">Admin</a></li> -->
                 </ul>
 
                 <ul id="nav-mobile" class="side-nav" style="left: -250px;">
-                  <li><a href="/info">Info</a></li>
+                  <li><a href="info">Info</a></li>
                   
-                  <li><a href="/shop">Get/Give Shop</a></li>
-                  <li><a href="/contact">Contact</a><i class="mdi mdi-access-point"></i></li>
+                  <li><a href="shop">Get/Give Shop</a></li>
+                  <li><a href="contact">Contact</a><i class="mdi mdi-access-point"></i></li>
                   <!--<li><a href="/admin">Admin</a></li>-->
                 </ul>
                 <a href="/#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
